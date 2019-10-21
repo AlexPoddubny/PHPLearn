@@ -1,6 +1,6 @@
 <?php
 	$images = include __DIR__ . "/data.php";
-	var_dump($images);
+	//var_dump($images);
 ?>
 <html>
 	<head>
@@ -22,7 +22,7 @@
 		<?php foreach ($images as $num => $image){ ?>
 			<div class="photo">
 				<a href="/gallery/image.php?num=<?php echo $num ?>">
-					<img src="/gallery/images/<?php echo $image ?>">
+					<img src="images/<?php echo $image ?>">
 				</a>
 			</div>
 		<?php } ?>
