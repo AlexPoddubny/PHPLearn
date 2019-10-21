@@ -1,5 +1,6 @@
 <?php
-	$images = ['15-36-46.jpg', '15-48-20.jpg', '17-15-09.jpg'];
+	$images = include __DIR__ . "/data.php";
+	var_dump($images);
 ?>
 <html>
 	<head>
@@ -9,7 +10,7 @@
 			}
 			.photo img {
 				border: 1px solid red;
-				width: 100px;
+				width: 200px;
 			}
 		</style>
 		<title>
@@ -18,9 +19,9 @@
 	</head>
 	<body>
 		<h1>Photogallery</h1>
-		<?php foreach ($images as $image){ ?>
+		<?php foreach ($images as $num => $image){ ?>
 			<div class="photo">
-				<a href="/gallery/image.php?file=<?php echo $image ?>">
+				<a href="/gallery/image.php?num=<?php echo $num ?>">
 					<img src="/gallery/images/<?php echo $image ?>">
 				</a>
 			</div>
