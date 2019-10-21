@@ -14,4 +14,8 @@
 		array_pop($cities);
 		return $cities;
 	}
+	
+	function get_last_letter($city){
+		return substr($city, -1);
+	}
 ?>
