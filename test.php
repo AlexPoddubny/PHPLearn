@@ -1,2 +1,2 @@
 <?php
-echo 'файл test.php';
+var_dump($_POST);

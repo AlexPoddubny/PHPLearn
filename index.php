@@ -5,18 +5,12 @@
 	<title>Урок №2</title>
 </head>
 <body>
-<?php
-	$a = [
-		'jan' => 'Январь',
-		'feb' => 'Февраль',
-		'mar' => 'Март',
-		'apr' => 'Апрель'
-	];
-	echo '<p>START</p>';
-	foreach ($a as $k => $month){
-		echo '<p>' . $k . ' = ' . $month . '</p>';
-	}
-	echo 'END';
-?>
+<form action="/index.php" method="post">
+	<input type="number" name = "x" value="<?php $_POST['x']?>">
+	+
+	<input type="number" name = "y" value="<?php $_POST['y']?>">
+	<input type="submit" value="=">
+	<?php echo $_POST['x'] + $_POST['y']; ?>
+</form>
 </body>
 </html>
