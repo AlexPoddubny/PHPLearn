@@ -6,11 +6,26 @@
 </head>
 <body>
 <form action="/index.php" method="post">
-	<input type="number" name = "x" value="<?php $_POST['x']?>">
+	<input type="number" name = "x" value="<?php
+		if (isset($_POST)) {
+			echo $_POST['x'];
+		}
+	?>">
 	+
-	<input type="number" name = "y" value="<?php $_POST['y']?>">
+	<input type="number" name = "y" value="<?php
+		if (isset($_POST)) {
+			echo $_POST['y'];
+		}
+	?>">
 	<input type="submit" value="=">
-	<?php echo $_POST['x'] + $_POST['y']; ?>
+	<?php
+		if (isset($_POST['x']) && isset($_POST['y'])) {
+			$res = $_POST['x'] + $_POST['y'];
+		} else {
+			$res = "";
+		}
+		echo $res;
+	?>
 </form>
 </body>
 </html>
