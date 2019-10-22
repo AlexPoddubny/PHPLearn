@@ -1,6 +1,17 @@
 <?php
 	$images = include __DIR__ . "/data.php";
 	//var_dump($images);
+	
+	if (!empty($_FILES)){
+		$uploaded = $_FILES['newimage'];
+		if ($uploaded['error'] == 0){
+			move_uploaded_file(
+				$uploaded['tmp_name'],
+				__DIR__ . '/images/' . $uploaded['name']
+			);
+		}
+		header("Refresh:0"); //перезагрузка галереи
+	}
 ?>
 <html>
 	<head>
@@ -26,5 +37,10 @@
 				</a>
 			</div>
 		<?php } ?>
+		<form action="/gallery/" enctype="multipart/form-data"
+		      method="post">
+			<input type="file" name="newimage" accept=".jpg">
+			<input type="submit">
+		</form>
 	</body>
 </html>
