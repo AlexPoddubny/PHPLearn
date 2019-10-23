@@ -24,7 +24,8 @@
 		$url = 'https://en.wikipedia.org/wiki/List_of_United_States_cities_by_population';
 		$page = file_get_contents($url);
 		//var_dump($page);
-		$page = cut_page($page, 'wikitable sortable');
+		$page = stristr(cut_page($page, 'wikitable sortable'), '</table>',
+			true);
 		do {
 			$page = cut_page($page, '</tr>');
 			$page = cut_page($page, 'title="');
