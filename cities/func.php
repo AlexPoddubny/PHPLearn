@@ -18,10 +18,13 @@
 	}
 	
 	function get_cities(){
+		/*
 		$url = "https://uk.wikipedia.org/wiki/%D0%9C%D1%96%D1%81%D1%82%D0%B0_%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B8_(%D0%B7%D0%B0_%D0%B0%D0%BB%D1%84%D0%B0%D0%B2%D1%96%D1%82%D0%BE%D0%BC)";
+		*/
+		$url = 'https://en.wikipedia.org/wiki/List_of_United_States_cities_by_population';
 		$page = file_get_contents($url);
 		//var_dump($page);
-		$page = cut_page($page, '<tbody>');
+		$page = cut_page($page, 'wikitable sortable');
 		do {
 			$page = cut_page($page, '</tr>');
 			$page = cut_page($page, 'title="');
