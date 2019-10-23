@@ -1,5 +1,6 @@
 <?php
 	require __DIR__ . "/func.php";
+	
 ?>
 <!DOCTYPE html>
 <html>
